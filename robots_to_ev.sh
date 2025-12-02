@@ -66,9 +66,6 @@ for dir in "${dirs[@]}"; do
         --refractory_period_ns=0 \
         --img_size $IMG_SIZE
 
-    # cleanup tmp folder
-    rm -rf "$EV_DIR/tmp"
-
     echo "Finished processing: $dir"
 done
 

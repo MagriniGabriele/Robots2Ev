@@ -70,7 +70,7 @@ if __name__ == "__main__":
     parser.add_argument("--input_dir", required=True)
     parser.add_argument("--output_dir", required=True)
     parser.add_argument("--shape", nargs=2, type=int, default=[720, 1280])
-    parser.add_argument("--fps", type=int, default=30)
+    parser.add_argument("--fps", type=int, default=120)
     parser.add_argument("--ext", choices=["gif", "mp4"], default="mp4")
     args = parser.parse_args()
 

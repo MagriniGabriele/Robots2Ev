@@ -54,6 +54,12 @@ for dir in "${dirs[@]}"; do
     mkdir -p "$EV_DIR/tmp"
     mkdir -p "$EV_DIR/$target_name"
 
+    # check if target EV folder already exists, skip if it does
+    if [ -d "$EV_DIR/$target_name" ] && [ "$(ls -A $EV_DIR/$target_name)" ]; then
+        echo "EV folder already exists and is not empty. Skipping: $EV_DIR/$target_name"
+        continue
+    fi
+
     # generate temporary ordered frames & timestamps (symlinking them to tmp folder)
     python generate_format.py --input_root "$dir" --output_root "$EV_DIR/tmp"
 
